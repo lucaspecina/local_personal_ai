@@ -46,7 +46,7 @@ This script provides a command-line interface for interacting with the personal 
 - **Data Ingestion**:
   - Extract information from multiple sources periodically (notion, whatsapp, calendar, reminders, own chat).
   - Use **AI agent to decide what data to incorporate as memory or concepts**, similar to current AI models like ChatGPT.
-  - Use **AI agent to analyze, summarize, organize, and upload** the new data, considering the old data.
+  - Indexer: Use **AI agent to analyze, summarize, organize, and upload** the new data, considering the old data.
 
 - **Orchestrator**:
   - Perform fact-checking and provide sources for the information.

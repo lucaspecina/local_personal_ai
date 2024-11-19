@@ -6,7 +6,7 @@
 
 ### 1. `data_ingestion.py`
 
-This script handles the ingestion of PDF documents, including text extraction, chunking, embeddings generation, and storage.
+This script handles the ingestion of TXT documents, including text extraction, chunking, embeddings generation, and storage.
 
 ### 2. `orchestrator.py`
 
@@ -40,3 +40,14 @@ This script provides a command-line interface for interacting with the personal 
     ```bash
     python cli.py <model_name>
     ```
+
+## Future Research Directions
+
+- **Data Ingestion**:
+  - Extract information from multiple sources periodically (notion, whatsapp, calendar, reminders, own chat).
+  - Use **AI agent to decide what data to incorporate as memory or concepts**, similar to current AI models like ChatGPT.
+  - Use **AI agent to analyze, summarize, organize, and upload** the new data, considering the old data.
+
+- **Orchestrator**:
+  - Perform fact-checking and provide sources for the information.
+  - Manage large volumes of data efficiently.

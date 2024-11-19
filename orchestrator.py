@@ -3,6 +3,9 @@ from langchain.chains import RetrievalQA
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
+import warnings
+warnings.filterwarnings("ignore")
+
 class Orchestrator:
     def __init__(self, model_name='llama3.2:latest'):
         self.embeddings_model = HuggingFaceEmbeddings(model_name='all-MiniLM-L6-v2')
@@ -24,21 +27,24 @@ You are my personal assistant AI. Your goal is to help me with my personal tasks
 Use the following context from my personal data to answer the question.
 
 """
-
-    # def get_answer(self, query):
-    #     full_query = f"{self.base_prompt}\n\nUser: {query}"
-    #     answer = self.qa_chain.invoke(full_query)
-    #     return answer['result']
-    
+        self.conversation_history = []
 
     def get_answer(self, query):
         # Retrieve relevant documents
         retrieved_docs = self.retriever.get_relevant_documents(query)
         context = "\n\n".join([doc.page_content for doc in retrieved_docs])
         
-        # Create the full query with context
-        full_query = f"{self.base_prompt}\n\nContext: {context}\n\nUser: {query}"
+        # Update conversation history
+        self.conversation_history.append(f"User: {query}")
+        
+        # Create the full query with context and conversation history
+        history = "\n".join(self.conversation_history)
+        full_query = f"{self.base_prompt}\n\nContext: {context}\n\n{history}\n\nAssistant:"
         
         # Get the answer from the QA chain
         answer = self.qa_chain.invoke(full_query)
+        
+        # Update conversation history with the assistant's response
+        self.conversation_history.append(f"Assistant: {answer['result']}")
+        
         return answer['result']

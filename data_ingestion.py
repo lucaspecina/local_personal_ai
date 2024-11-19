@@ -5,6 +5,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 
+import warnings
+warnings.filterwarnings("ignore")
+
 def extract_text_from_txt(txt_path):
     with open(txt_path, 'r', encoding='utf-8') as file:
         text = file.read()

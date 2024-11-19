@@ -1,6 +1,9 @@
 import sys
 from orchestrator import Orchestrator
 
+import warnings
+warnings.filterwarnings("ignore")
+
 def main():
     model_name = sys.argv[1] if len(sys.argv) > 1 else 'llama3.2:latest'
     orchestrator = Orchestrator(model_name=model_name)

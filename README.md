@@ -20,7 +20,7 @@ This script provides a command-line interface for interacting with the personal 
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/local_personal_ai.git
+    git clone https://github.com/lucaspecina/local_personal_ai.git
     cd local_personal_ai
     ```
 

@@ -1,0 +1,7 @@
+PyPDF2
+langchain
+langchain-community
+chromadb
+sentence-transformers
+torch
+numpy

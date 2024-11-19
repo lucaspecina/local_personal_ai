@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+
+# Ignore temporary data folder
+tmp_data/
+
+# Ignore vector store data
+vectorstore/
+
+# Ignore logs
+*.log
+
+# Ignore other temporary files
+*.tmp
+
+.vscode/

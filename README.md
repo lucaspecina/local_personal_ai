@@ -16,16 +16,27 @@ This module orchestrates the retrieval and question-answering process. It initia
 
 This script provides a command-line interface for interacting with the personal AI assistant. Users can input queries and receive answers in real-time.
 
+## Installation
+
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/yourusername/local_personal_ai.git
+    cd local_personal_ai
+    ```
+
+2. **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 ## Usage
 
-1. **Ingest PDF Data**:
+1. **Ingest TXT Data**:
     ```bash
-    python data_ingestion.py <path_to_pdf>
+    python data_ingestion.py <path_to_txt>
     ```
 
 2. **Run the Assistant**:
     ```bash
-    python cli.py
+    python cli.py <model_name>
     ```
-
-## Requirements
